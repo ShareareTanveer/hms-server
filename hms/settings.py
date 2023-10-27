@@ -9,8 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-import dj_database_url
-import dotenv
+
 from datetime import timedelta
 from pathlib import Path
 import os
@@ -91,12 +90,12 @@ WSGI_APPLICATION = 'hms.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # DATABASES = {
 #     'default': {
@@ -109,13 +108,13 @@ WSGI_APPLICATION = 'hms.wsgi.application'
 #     }
 # }
 
-dotenv.load_dotenv()
+# dotenv.load_dotenv()
 
 
 
-DATABASES = {
-    'default': dj_database_url.parse(os.getenv('POSTGRES_URL'))
-}
+# DATABASES = {
+#     'default': dj_database_url.parse(os.getenv('POSTGRES_URL'))
+# }
 
 
 # Password validation
